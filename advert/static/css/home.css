@@ -1,0 +1,36 @@
+/* body {
+    /* background-color: lightgrey; */
+body {
+    background-color: whitesmoke;
+
+    background-position: top;
+  
+   
+}
+
+h1 {
+    text-align: center;
+}
+h2 {
+    margin-top: 50px;
+}
+h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: grey;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: darkslateblue;
+}
+
+a:visited {
+    color: blueviolet;
+}
+a:hover{
+    color: palegreen;
+}
+

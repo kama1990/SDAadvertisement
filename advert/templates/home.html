@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTAL OGŁOSZENIOWY</title>
-</head>
-<body>
-    <h1>PORTAL OGŁOSZENIOWY</h1>
-    {% load pluralize_pl %}
-    <h2>Napisano {{posts.count}} post{{posts|pluralize_pl:'post','posty', 'postów'}}</h2>
+	<head>
+        {% load static %}
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+		<title>PORTAL OGŁOSZENIOWY</title>
+	</head>
+	<body>
+		<h1>PORTAL OGŁOSZENIOWY</h1>
+		{% load pluralize_pl %}
+		<p>Napisano {{posts.count}} {{posts| pluralize_pl:'post, posty, postów'}}</p>
 
-    <!-- KROK 5
+		<!-- KROK 5
     przygotowanie informacji aby pojawiły się na stronie -->
-
-{% for post in posts %}
-    <a href="{% url 'detail' post.id %}"><h2>{{post.title}}</h2></a> <!-- taki sposób zapisu powoduje, ze linkuje nam się tylko to co jest wewnątrz a -->
-    <h3>{{post.date}}</h3>
-    <h3>{{post.text|truncatechars:60}}</h3> <!-- |truncatechars:60 powoli na wyswietlenie tylko 60 pierwszych znaków -->
-    <h4>Kategoria ważności: {{post.category}}</h4>
-{% endfor %}
-
-</body>
+		<div>
+			{% for post in posts %}
+			<a href="{% url 'detail' post.id %}"><h2>{{post.title}}</h2></a>
+		<!-- taki sposób zapisu powoduje, ze linkuje nam się tylko to co jest wewnątrz a -->
+			<p>Data publikacji: {{post.date}}</p>
+			<h3>{{post.text|truncatechars:60}}</h3>
+		<!-- |truncatechars:60 powoli na wyswietlenie tylko 60 pierwszych znaków -->
+			<h4>Kategoria ważności: {{post.category}}</h4>
+			{% endfor %}
+			
+		
+        	
+        </div>
+	</body>
 </html>

@@ -1,0 +1,14 @@
+body {
+    background-color: whitesmoke;
+}
+h1 {
+    text-align: center;
+}
+input[type="submit"] {
+    color:white; 
+    background-color: gray;
+    padding-inline-start: 50px;
+    margin-top: 20px;
+    margin-left: 5px;
+    font-weight: bolder;
+}
